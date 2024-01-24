@@ -35,6 +35,9 @@ const Content = () => {
     /* Calling the set State to update the changes */
     setItems(listItems)
 
+    // using localStorage for presistant Data
+    localStorage.setItem('shoppinglist', JSON.stringify(listItems)); 
+
   }
 
 
