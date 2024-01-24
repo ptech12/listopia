@@ -55,7 +55,12 @@ const Content = () => {
                 onChange={() => handleCheck(item.id)} // we use onChange event for input tag
               />
 
-              <label>{item.item}</label>
+              <label
+                style={item.checked ? { textDecoration: 'line-through'} : null }
+                onDoubleClick={() => handleCheck(item.id)}
+              >
+                {item.item}
+              </label>
 
               <FaTrashAlt  
                 role="button" 
