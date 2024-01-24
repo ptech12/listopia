@@ -10,11 +10,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header title="Groceries Li st" />
       <Content />
-      <Footer />
+      <Footer /> 
     </div>
-  );
+  ); 
 }
 
 export default App;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaTrashAlt, FaGrav, FaBox, FaDropbox } from "react-icons/fa";
+import { FaTrashAlt, FaDropbox } from "react-icons/fa";
 const Content = () => {
   const [items, setItems] = useState([
     {
