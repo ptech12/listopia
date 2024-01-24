@@ -110,3 +110,47 @@ ul li::before{
   color: #D24545;
   outline: none;
 }
+
+/* ADDFORM styles */
+.addForm{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: .5rem 0 0;
+  padding: 0 .5rem .25rem;
+  border-bottom: 1px solid #ddd;
+}
+.addForm label{
+  position: absolute;
+  left: -999999px; 
+}
+
+.addForm input[type='text']{
+  flex-grow: 1;
+  max-width: calc(100% - 50px);
+  min-height: 48px;
+  font: 1.2rem;
+  padding: .25rem;
+  border-radius: .25rem;
+  margin-right: .25rem;
+  outline: none;
+  border: 1px solid #ddd;
+}
+
+button{
+  border: 1px solid #fff;
+  height: 48px;
+  min-width: 48px;
+  border-radius: .25rem;
+  font-size: 1rem;
+  background-color: aliceblue;
+  color: mediumblue;
+  cursor: pointer;
+}
+
+button:focus,
+button:hover{
+  color: white;
+  background-color: limegreen;
+  outline: none;
+}
