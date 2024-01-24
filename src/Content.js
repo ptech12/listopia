@@ -19,6 +19,26 @@ const Content = () => {
     },
   ]);
 
+  /* handleCheck
+    using State hook to change the checked boolean
+  */
+  const handleCheck = id => {
+    // console.log(`key : ${id}`);
+    // using shallow copy of the array from the state of items
+    // goin on with declarative way
+    const listItems = items.map( item => item.id === id ? {
+      // return new item list
+      /* Spread out with OG list and NOT the checked boolean */
+      ...item, checked: !item.checked
+    } : item);
+
+    /* Calling the set State to update the changes */
+    setItems(listItems)
+
+  }
+
+
+
   return (
     <main>
       <ul>
@@ -29,6 +49,7 @@ const Content = () => {
               <input 
                 type="checkbox"
                 checked={item.checked}
+                onChange={() => handleCheck(item.id)} // we use onChange event for input tag
               />
 
               <label>{item.item}</label>
