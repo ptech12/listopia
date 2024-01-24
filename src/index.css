@@ -101,6 +101,12 @@ ul li::before{
   min-width: 48px;
   height: 36px;
   font-size: 1rem;
-  color: #D24545;
+  color: steelblue;
   cursor: pointer;
+}
+
+.item svg:focus,
+.item svg:hover{
+  color: #D24545;
+  outline: none;
 }
