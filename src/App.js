@@ -61,7 +61,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header title="Groceries Li st" />
+      <Header title="Groceries List" />
       <Content
         items={items}
         handleCheck={handleCheck}
