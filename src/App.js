@@ -7,23 +7,7 @@ import AddItem from './AddItem';
 
 function App() {
   /* Props drilling down functions */
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      checked: false,
-      item: "One Half pound bag of Cocoa Covered Almonds unsalted"
-    },
-    {
-      id: 2,
-      checked: false,
-      item: "Unsalted roasted peanuts"
-    },
-    {
-      id: 3,
-      checked: false,
-      item: "Bread Loaf"
-    },
-  ]);
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppinglist')));
   // new Item State
   const [newItem, setNewItem] = useState("");
 
