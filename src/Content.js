@@ -37,9 +37,22 @@ const Content = () => {
 
     // using localStorage for presistant Data
     localStorage.setItem('shoppinglist', JSON.stringify(listItems)); 
-
+    
   }
+  
+  /* Function for deleting items */
+  const handleDelete = id => {
+    // console.log(id);
+    // same as handleCheck instead 
+    // we filter to remove the passed ID
+    const listItems = items.filter(item => item.id !== id)
 
+    /* Calling the set State to update the changes */
+    setItems(listItems)
+  
+    // using localStorage for presistant Data
+    localStorage.setItem('shoppinglist', JSON.stringify(listItems)); 
+  }
 
 
   return (
@@ -62,7 +75,8 @@ const Content = () => {
                 {item.item}
               </label>
 
-              <FaTrashAlt  
+              <FaTrashAlt
+                onClick={() => handleDelete(item.id)}
                 role="button" 
                 tabIndex='0'
               />
