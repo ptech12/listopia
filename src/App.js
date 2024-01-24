@@ -24,8 +24,21 @@ function App() {
       item: "Bread Loaf"
     },
   ]);
+  // new Item State
+  const [newItem, setNewItem] = useState("");
 
-  /* handleCheck
+  /* Reusable function for adding it to LocalStorage and setting the state */
+  const setSaveItems = newItems => {
+      /* Calling the set State to update the changes */
+      setItems(newItems)
+
+      // using localStorage for presistant Data
+      localStorage.setItem('shoppinglist', JSON.stringify(newItems)); 
+    
+  }
+
+  /* 
+    handleCheck
     using State hook to change the checked boolean
   */
   const handleCheck = id => {
@@ -38,11 +51,9 @@ function App() {
       ...item, checked: !item.checked
     } : item);
 
-    /* Calling the set State to update the changes */
-    setItems(listItems)
+    // calling the reusable functions
+    setSaveItems(listItems)
 
-    // using localStorage for presistant Data
-    localStorage.setItem('shoppinglist', JSON.stringify(listItems)); 
     
   }
   
@@ -53,17 +64,52 @@ function App() {
     // we filter to remove the passed ID
     const listItems = items.filter(item => item.id !== id)
 
-    /* Calling the set State to update the changes */
-    setItems(listItems)
-  
-    // using localStorage for presistant Data
-    localStorage.setItem('shoppinglist', JSON.stringify(listItems)); 
+    // calling the reusable functions
+    setSaveItems(listItems)
+  }
+
+  /* 
+    handleSubmit function( (e) => event object of button)
+  */
+  const handleSubmit = e => {
+    e.preventDefault(); // prevents webpage from reloading on submitting
+    // return if no input 
+    if (!newItem) return;
+    
+    // using the AddItem func
+    addItem(newItem);
+
+
+    setNewItem(''); // reset the state
+    
+  }
+
+  /* addItem func to add the item in the list */
+  /* items[items.length - 1] last item of the list */
+  const addItem = item => {
+    
+    const id = items.length ? items[items.length - 1].id + 1 : 1;
+    // object for newItems
+    const myNewItem = {
+      id, 
+      checked: false,
+      item
+    };
+    // adding it to existing list
+    const listItems = [...items, myNewItem];
+
+    // calling the reusable functions
+    setSaveItems(listItems)
   }
 
   return (
     <div className="App">
       <Header title="listopia" />
-      <AddItem />
+      <AddItem
+        newItem={newItem}
+        setNewItem={setNewItem}
+        handleSubmit={handleSubmit}
+      />
       <Content
         items={items}
         handleCheck={handleCheck}

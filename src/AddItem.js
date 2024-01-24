@@ -1,8 +1,12 @@
 import { FaPlus } from "react-icons/fa";
 
-const AddItem = () => {
+const AddItem = ({ newItem, setNewItem, handleSubmit }) => {
   return (
-    <form className="addForm">
+    /* 
+        the handleSubmit function will get the event from the from
+        so we don't need call the funciton anonymously
+     */
+    <form onSubmit={handleSubmit} className="addForm">
         <label htmlFor="addItem">
             Add Item
         </label>
@@ -12,10 +16,13 @@ const AddItem = () => {
             type="text"
             placeholder="Add Items..."
             required 
+            value={newItem}
+            onChange={e => setNewItem(e.target.value)}
         />
         <button
             type="submit"
-            aria-label="Add Item">
+            aria-label="Add Item"
+            >
                 <FaPlus />
         </button>
 
