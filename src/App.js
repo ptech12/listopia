@@ -3,6 +3,7 @@ import Content from './Content';
 import Footer from './Footer';
 import { useState } from 'react';
 import AddItem from './AddItem';
+import SearchItem from './SearchItem';
 
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
   const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppinglist')));
   // new Item State
   const [newItem, setNewItem] = useState("");
+  /* Search item state object */
+  const [search, setSearch] = useState("")
 
   /* Reusable function for adding it to LocalStorage and setting the state */
   const setSaveItems = newItems => {
@@ -93,6 +96,11 @@ function App() {
         newItem={newItem}
         setNewItem={setNewItem}
         handleSubmit={handleSubmit}
+      />
+      <SearchItem 
+        search={search}
+        setSearch={setSearch}
+        
       />
       <Content
         items={items}
