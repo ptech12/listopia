@@ -1,28 +1,33 @@
 import Header  from './Header';
 import Content from './Content';
 import Footer from './Footer';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AddItem from './AddItem';
 import SearchItem from './SearchItem';
 
 
 function App() {
   /* Props drilling down functions */
-  const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppinglist')));
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppinglist')) || []);
   // new Item State
   const [newItem, setNewItem] = useState("");
   /* Search item state object */
   const [search, setSearch] = useState("")
 
-  /* Reusable function for adding it to LocalStorage and setting the state */
-  const setSaveItems = newItems => {
-      /* Calling the set State to update the changes */
-      setItems(newItems)
 
-      // using localStorage for presistant Data
-      localStorage.setItem('shoppinglist', JSON.stringify(newItems)); 
-    
-  }
+  /* if the dependency changes
+    and renders the arrow function again
+  */
+  useEffect(() => {
+    /* 
+      Moved from another function so that useEffect automattically renders when    
+      update in items
+     */
+    // using localStorage for presistant Data
+    localStorage.setItem('shoppinglist', JSON.stringify(items)); 
+
+  }, /*  dependency */ 
+    [items] )
 
   /* 
     handleCheck
@@ -38,8 +43,8 @@ function App() {
       ...item, checked: !item.checked
     } : item);
 
-    // calling the reusable functions
-    setSaveItems(listItems)
+    /* Calling the set State to update the changes */
+    setItems(listItems)
 
     
   }
@@ -51,8 +56,8 @@ function App() {
     // we filter to remove the passed ID
     const listItems = items.filter(item => item.id !== id)
 
-    // calling the reusable functions
-    setSaveItems(listItems)
+    /* Calling the set State to update the changes */
+    setItems(listItems)
   }
 
   /* 
@@ -85,8 +90,8 @@ function App() {
     // adding it to existing list
     const listItems = [...items, myNewItem];
 
-    // calling the reusable functions
-    setSaveItems(listItems)
+    /* Calling the set State to update the changes */
+    setItems(listItems)
   }
 
   return (
