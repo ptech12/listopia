@@ -22,6 +22,9 @@ function App() {
   const [search, setSearch] = useState("")
   /* fetch error state */
   const [fetchError, setFetchError] = useState(null)
+  /* Loading state */
+  const [loading, setLoading] = useState(true)
+
 
   /* if the dependency changes
     and renders the arrow function again
@@ -45,12 +48,17 @@ function App() {
       }catch (err){
         // console.error(err.message)
         setFetchError(err.message)
+      } finally {
+        setLoading(false)
       }
     }
 
-    // we can call this IIFE function 
-    // IIFE => instantly invoked function expression
-    (async () => await fetchItems())(); 
+    /* Waiting for 2 sec before calling the async function */
+    setTimeout(() => {
+      // we can call this IIFE function 
+      // IIFE => instantly invoked function expression
+      (async () => await fetchItems())(); 
+    }, 2000);
 
   }, /*  dependency */ 
     [] )
@@ -134,8 +142,9 @@ function App() {
         
       />
       <main>
+        { loading && <p>Loading Items... </p>}
         {fetchError && <p style={{color: 'red'}}>{`Error: ${fetchError}`}</p>}
-        { !fetchError &&
+        { !fetchError && !loading &&
           <Content
           items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
           handleCheck={handleCheck}
