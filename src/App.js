@@ -103,7 +103,7 @@ function App() {
   }
   
   /* Function for deleting items */
-  const handleDelete = id => {
+  const handleDelete = async id => {
     // console.log(id);
     // same as handleCheck instead 
     // we filter to remove the passed ID
@@ -111,6 +111,15 @@ function App() {
 
     /* Calling the set State to update the changes */
     setItems(listItems)
+
+    /* delete options */
+    const deleteOptions = {method: 'DELETE'}
+    /* define request url */
+    const reqUrl = `${API_URL}/${id}`;
+    // seend the request
+    const result = await apiRequest(reqUrl, deleteOptions);
+    if(result) setFetchError(result)
+    
   }
 
   /* 
