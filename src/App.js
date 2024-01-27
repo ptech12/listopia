@@ -60,7 +60,7 @@ function App() {
       // we can call this IIFE function 
       // IIFE => instantly invoked function expression
       (async () => await fetchItems())(); 
-    }, 999);
+    }, Math.floor((Math.random() * 5000) + 1000));
 
   }, /*  dependency */ 
     [] )
@@ -173,7 +173,8 @@ function App() {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    color:"white"
   }
 
   return (
@@ -190,7 +191,7 @@ function App() {
         
       />
       <main>
-        { loading && <p style={loadingStyle}>Loading <SyncLoader cssOverride={{marginLeft:'5px', paddingTop:'10px'}} size={'20px'} color='mediumblue' /> </p>}
+        { loading && <p style={loadingStyle}>Loading <SyncLoader cssOverride={{marginLeft:'5px', paddingTop:'10px'}} size={'20px'} color='#eee' /> </p>}
         {fetchError && <p style={{color: 'red'}}>{`Error: ${fetchError}`}</p>}
         { !fetchError && !loading &&
           <Content

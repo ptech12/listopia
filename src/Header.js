@@ -4,8 +4,8 @@ import './index.css'
 const Header = ({ title }) => {
 
   const headerStyle = {
-    backgroundColor: 'mediumblue',
-    color: '#fff'
+    // backgroundColor: 'mediumblue',
+    // color: '#fff'
   }
   return (
     <header style={headerStyle}>
