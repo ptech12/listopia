@@ -1,10 +1,13 @@
-<img src="./src/assets/imgs/logo-thumb.gif" width="25%" height="25%"/>
+<p align="center">
+<img src="./src/assets/imgs/logo-thumb.gif" width="60%" />
 
-# Grocer List
+</p>
 
-## Smart App
+# Listopia
 
-### Key Metrix
+### Your Smart Grocer App
+
+### Key Concepts Covered
 
   - [x] React Component Lifecycle
   - [x] React Hooks (useState, useEffect)
@@ -19,4 +22,13 @@
   - [ ] Custom Hooks
   - [ ] Context API & useContext Hooks
   - [ ] React Redux
-  - [ ]  
+  - [ ] Deployment
+
+## Additional Feature
+
+  - [ ] Dark/Light Theme
+  - [ ] Responsive Design
+  - [ ] Authentication using firebase
+  -  More...
+
+  
