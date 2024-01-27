@@ -4,7 +4,7 @@ import Footer from './Footer';
 import { useState, useEffect } from 'react';
 import AddItem from './AddItem';
 import SearchItem from './SearchItem';
-
+import apiRequest from "./apiRequest";
 import { SyncLoader } from "react-spinners";
 
 
@@ -114,7 +114,7 @@ function App() {
 
   /* addItem func to add the item in the list */
   /* items[items.length - 1] last item of the list */
-  const addItem = item => {
+  const addItem = async (item) => {
     
     const id = items.length ? items[items.length - 1].id + 1 : 1;
     // object for newItems
@@ -128,6 +128,20 @@ function App() {
 
     /* Calling the set State to update the changes */
     setItems(listItems)
+
+    // sent to the API
+    const postOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      // body is the newItem that is added
+      body: JSON.stringify(myNewItem)
+    }
+    // send request
+    const result = await apiRequest(API_URL, postOptions);
+    // if null not recieved than display error message
+    if(result) setFetchError(result);
   }
   const loadingStyle = {
     display: 'flex',
