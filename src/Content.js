@@ -6,7 +6,7 @@ import ItemList from "./ItemList";
 */
 const Content = ({ items, handleDelete, handleCheck }) => {
   return (
-    <main>
+    <>
       {items.length ? (
         <ItemList
           items={items}
@@ -19,7 +19,7 @@ const Content = ({ items, handleDelete, handleCheck }) => {
           <FaDropbox />
         </>
       )}
-    </main>
+    </>
   );
 };
 

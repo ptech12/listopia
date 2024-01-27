@@ -7,13 +7,21 @@ import SearchItem from './SearchItem';
 
 
 function App() {
-  /* Props drilling down functions */
-  const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppinglist')) || []);
+  const API_URL = "http://localhost:3500/items"
+
+
+
+  /*
+    Props drilling down functions 
+    JSON.parse(localStorage.getItem('shoppinglist')) || 
+  */
+  const [items, setItems] = useState([]);
   // new Item State
   const [newItem, setNewItem] = useState("");
   /* Search item state object */
   const [search, setSearch] = useState("")
-
+  /* fetch error state */
+  const [fetchError, setFetchError] = useState(null)
 
   /* if the dependency changes
     and renders the arrow function again
@@ -22,12 +30,30 @@ function App() {
     /* 
       Moved from another function so that useEffect automattically renders when    
       update in items
+      // using localStorage for presistant Data
+      localStorage.setItem('shoppinglist', JSON.stringify(items)); 
      */
-    // using localStorage for presistant Data
-    localStorage.setItem('shoppinglist', JSON.stringify(items)); 
+    // load the Data from rest API
+    const fetchItems = async () => {
+      try{
+        const response = await fetch(API_URL);
+        if(!response.ok) throw Error('There is a problem while fetching expected data')
+        const listItems = await response.json();
+        console.log(listItems);
+        setItems(listItems);
+        setFetchError(null) // setting it to null
+      }catch (err){
+        // console.error(err.message)
+        setFetchError(err.message)
+      }
+    }
+
+    // we can call this IIFE function 
+    // IIFE => instantly invoked function expression
+    (async () => await fetchItems())(); 
 
   }, /*  dependency */ 
-    [items] )
+    [] )
 
   /* 
     handleCheck
@@ -107,12 +133,15 @@ function App() {
         setSearch={setSearch}
         
       />
-      <Content
-        items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
-        handleCheck={handleCheck}
-        handleDelete={handleDelete}
-
-      />
+      <main>
+        {fetchError && <p style={{color: 'red'}}>{`Error: ${fetchError}`}</p>}
+        { !fetchError &&
+          <Content
+          items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
+          handleCheck={handleCheck}
+          handleDelete={handleDelete}
+        />}
+      </main>
       <Footer
         length={items.length}
       /> 
