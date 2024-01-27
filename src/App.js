@@ -95,7 +95,7 @@ function App() {
       body: JSON.stringify({ checked: myItem[0].checked })
     }
     /* define request url */
-    const reqUrl = `${API_URL}?id=${id}`;
+    const reqUrl = `${API_URL}/${id}`;
     // seend the request
     const result = await apiRequest(reqUrl, updateOptions);
     if(result) setFetchError(result)
