@@ -4,7 +4,7 @@
     optionsObject => what to do (create, update or delete)
     errMsg => error message to display
  */
-async function apiRequest(url='', optionsObject = null, errMsg = null) {
+const apiRequest = async (url='', optionsObject = null, errMsg = null) => {
     try{
         const response = await fetch(url, optionsObject);
         if(!response.ok) throw Error('There was an error while fetcing. Please reload.');
@@ -14,3 +14,5 @@ async function apiRequest(url='', optionsObject = null, errMsg = null) {
         return errMsg;
     }
 }
+
+export default apiRequest;
