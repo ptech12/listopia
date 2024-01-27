@@ -69,7 +69,7 @@ function App() {
     handleCheck
     using State hook to change the checked boolean
   */
-  const handleCheck = id => {
+  const handleCheck = async (id) => {
     // console.log(`key : ${id}`);
     // using shallow copy of the array from the state of items
     // goin on with declarative way
@@ -82,7 +82,24 @@ function App() {
     /* Calling the set State to update the changes */
     setItems(listItems)
 
-    
+    /* update the checked in API server */
+    // grabbing the changed item
+    const myItem = listItems.filter(item => item.id === id) 
+
+    /* UPDATE options */
+    const updateOptions = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ checked: myItem[0].checked })
+    }
+    /* define request url */
+    const reqUrl = `${API_URL}?id=${id}`;
+    // seend the request
+    const result = await apiRequest(reqUrl, updateOptions);
+    if(result) setFetchError(result)
+
   }
   
   /* Function for deleting items */
