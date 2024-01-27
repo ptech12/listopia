@@ -1,22 +1,7 @@
 {
   "items": [
     {
-      "id": "1",
-      "checked": false,
-      "item": "unsalted peanuts"
-    },
-    {
-      "id": "2",
-      "checked": false,
-      "item": "pizza"
-    },
-    {
-      "id": "21",
-      "checked": false,
-      "item": "pizza"
-    },
-    {
-      "id": "211",
+      "id": 1,
       "checked": false,
       "item": "cookies"
     }

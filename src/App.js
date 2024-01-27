@@ -9,7 +9,7 @@ import { SyncLoader } from "react-spinners";
 
 
 function App() {
-  const API_URL = "http://localhost:3500/items"
+  const API_URL = "http://localhost:3001/items"
 
 
 
