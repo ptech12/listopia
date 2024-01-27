@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react';
 import AddItem from './AddItem';
 import SearchItem from './SearchItem';
 
+import { SyncLoader } from "react-spinners";
+
 
 function App() {
   const API_URL = "http://localhost:3500/items"
@@ -58,7 +60,7 @@ function App() {
       // we can call this IIFE function 
       // IIFE => instantly invoked function expression
       (async () => await fetchItems())(); 
-    }, 2000);
+    }, 999);
 
   }, /*  dependency */ 
     [] )
@@ -127,6 +129,12 @@ function App() {
     /* Calling the set State to update the changes */
     setItems(listItems)
   }
+  const loadingStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 
   return (
     <div className="App">
@@ -142,7 +150,7 @@ function App() {
         
       />
       <main>
-        { loading && <p>Loading Items... </p>}
+        { loading && <p style={loadingStyle}>Loading <SyncLoader cssOverride={{marginLeft:'5px', paddingTop:'10px'}} size={'10'} color='mediumblue' /> </p>}
         {fetchError && <p style={{color: 'red'}}>{`Error: ${fetchError}`}</p>}
         { !fetchError && !loading &&
           <Content
@@ -151,9 +159,13 @@ function App() {
           handleDelete={handleDelete}
         />}
       </main>
-      <Footer
-        length={items.length}
-      /> 
+      {
+        !loading && (
+          <Footer
+            length={items.length}
+          /> 
+        )
+      }
     </div>
   ); 
 }
