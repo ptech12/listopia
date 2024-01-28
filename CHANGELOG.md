@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.1](https://github.com/ptech12/listopia/compare/v0.4.0...v0.4.1) (2024-01-28)
+
+
+### Bug Fixes
+
+* **lib:** remove unused library(standard-release) ([5795f83](https://github.com/ptech12/listopia/commit/5795f830e348c609e01a3b024d03cf1e6542cf6f))
+
 ## [0.4.0](https://github.com/ptech12/listopia/compare/v0.3.0...v0.4.0) (2024-01-28)
 
 
