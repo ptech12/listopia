@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/ptech12/listopia/compare/v0.3.0...v0.4.0) (2024-01-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* **style:** css color change
+
+### Features
+
+* **style:** css color change ([50ba0cc](https://github.com/ptech12/listopia/commit/50ba0ccf7f6c37da90e8375be893b67194442b73))
+
 ## [0.3.0](https://github.com/ptech12/listopia/compare/v0.2.0...v0.3.0) (2024-01-27)
 
 
