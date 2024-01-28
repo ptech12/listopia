@@ -40,7 +40,6 @@
     ]
   },
   "devDependencies": {
-    "standard-release": "^0.2.0",
     "standard-version": "^9.5.0"
   }
 }
