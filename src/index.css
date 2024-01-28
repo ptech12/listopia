@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  --bg-color: radial-gradient(circle at -8.9% 51.2%, rgb(13, 12, 12) 0%, rgb(49, 48, 48) 15.9%, rgb(49, 49, 46) 15.9%, rgb(18, 18, 18) 24.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
 }
 
 html{
@@ -11,7 +12,7 @@ html{
 
 body {
   min-height: 100vh; 
-  background: radial-gradient(circle at -8.9% 51.2%, rgb(255, 124, 0) 0%, rgb(255, 124, 0) 15.9%, rgb(255, 163, 77) 15.9%, rgb(255, 163, 77) 24.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
+  background: var(--bg-color);
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -71,7 +72,8 @@ ul li::before{
   align-items: center;
   padding: .5rem 0 .5rem .5rem;
   margin: .25rem 0;
-  background-color: #eee;
+  color: #ddd;
+  background-color: var(--bg-color);
 }
 
 .item:first-child{
