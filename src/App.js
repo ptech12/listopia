@@ -179,7 +179,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header title="listopia" />
+      <Header title="Listopia" />
       <AddItem
         newItem={newItem}
         setNewItem={setNewItem}
