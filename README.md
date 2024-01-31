@@ -4,8 +4,13 @@
 </p>
 
 # Listopia
-
 ### Your Smart Grocer App
+<p align="center">
+<img src="./src/assets/imgs/listopia-landing.png" width="100%" />
+
+</p>
+
+
 
 ### Key Concepts Covered
 
