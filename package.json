@@ -20,7 +20,7 @@
     "eject": "react-scripts eject",
     "push": "git push -u origin main",
     "release": "standard-version",
-    "releasepush": "npm run push && npm run release",
+    "releasepush": "npm run release && npm run push",
     "db-serve": "npx json-server -p 3001 ./data/db.json"
   },
   "eslintConfig": {
