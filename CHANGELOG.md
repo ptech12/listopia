@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.2](https://github.com/ptech12/listopia/compare/v0.5.1...v0.5.2) (2024-01-31)
+
+
+### Features
+
+* **style:** new style for UI and background changes ([28cb775](https://github.com/ptech12/listopia/commit/28cb775219c43e0cc61dcd8d201559e08b71f05d))
+
 ### [0.5.1](https://github.com/ptech12/listopia/compare/v0.5.0...v0.5.1) (2024-01-31)
 
 
