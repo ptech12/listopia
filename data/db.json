@@ -7,23 +7,23 @@
     },
     {
       "id": "11",
-      "checked": false,
+      "checked": true,
       "item": "helo"
     },
     {
       "id": "111",
-      "checked": false,
+      "checked": true,
       "item": "lays"
     },
     {
       "id": "1111",
-      "checked": false,
+      "checked": true,
       "item": "carmel"
     },
     {
       "id": "11111",
       "checked": false,
-      "item": "pizza"
+      "item": "curd"
     }
   ]
 }
