@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.1](https://github.com/ptech12/listopia/compare/v0.5.0...v0.5.1) (2024-01-31)
+
+
+### Features
+
+* **app:** title changes ([50721b8](https://github.com/ptech12/listopia/commit/50721b88286a84f044fd10a0b10afd99c95668d2))
+
+
+### Bug Fixes
+
+* **app:** script changes ([08e21a2](https://github.com/ptech12/listopia/commit/08e21a22eb99ed83b8436d37916f39d040489e1e))
+
 ## [0.5.0](https://github.com/ptech12/listopia/compare/v0.4.1...v0.5.0) (2024-01-31)
 
 
