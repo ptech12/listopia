@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.3](https://github.com/ptech12/listopia/compare/v0.5.2...v0.5.3) (2024-01-31)
+
+
+### Features
+
+* **doc:** add landing page image to README.md ([c4ac13b](https://github.com/ptech12/listopia/commit/c4ac13bce0af0c3b54759b0b525d841b3669c6d9))
+
+
+### Bug Fixes
+
+* **doc:** add landing image to README.md ([20d6535](https://github.com/ptech12/listopia/commit/20d6535ff6330afb61706b5b6d2acc4c64435946))
+
 ### [0.5.2](https://github.com/ptech12/listopia/compare/v0.5.1...v0.5.2) (2024-01-31)
 
 
