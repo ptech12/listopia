@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/ptech12/listopia/compare/v0.4.1...v0.5.0) (2024-01-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** json-server is used to serve the DB data
+
+### Bug Fixes
+
+* **core:** add database server script ([f5067c6](https://github.com/ptech12/listopia/commit/f5067c699501221e45c6793e8738c68ab7a7d5ab))
+
 ### [0.4.1](https://github.com/ptech12/listopia/compare/v0.4.0...v0.4.1) (2024-01-28)
 
 
