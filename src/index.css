@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 /* RESET */
 *, *::after, *::before{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  --bg-color: radial-gradient(circle at -8.9% 51.2%, rgb(13, 12, 12) 0%, rgb(49, 48, 48) 15.9%, rgb(49, 49, 46) 15.9%, rgb(18, 18, 18) 24.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
+  /* background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%); */
+  --bg-color: linear-gradient(to right, #a18cd1 25%, #fbc2eb 100%);
+  --white: #fff;
 }
 
 html{
@@ -13,7 +17,7 @@ html{
 body {
   min-height: 100vh; 
   background: var(--bg-color);
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -33,11 +37,12 @@ body {
 header, footer{
   width: calc(100% - 2px);
   padding: 0 0.25rem;
-  background-color: rgb(19, 30, 37);
-  color: aliceblue;
+  background-color: var(--bg-color);
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 1.2rem;
 }
 
 main{
@@ -53,7 +58,6 @@ main{
 
 footer{
   justify-content: center !important;
-  font-size: 18px; 
 }
 
 ul{
@@ -72,7 +76,7 @@ ul li::before{
   align-items: center;
   padding: .5rem 0 .5rem .5rem;
   margin: .25rem 0;
-  color: #ddd;
+  color: #fff;
   background-color: var(--bg-color);
 }
 
@@ -86,18 +90,18 @@ ul li::before{
   width: 48px;
   min-width: 48px;
   height: 2.5rem;
-  height: 48px;
+  /* height: 48px; */
   min-height: 48px;
   cursor: pointer;
   margin-right: .5rem;
 }
 
 .item input[type="checkbox"]:focus + label{
-  text-decoration: underline;
+  text-decoration: line-through;
 }
 
 .item > label{
-  font-size: .75rem;
+  font-size: .95rem;
   flex-grow: 1;
 }
 
@@ -106,7 +110,7 @@ ul li::before{
   min-width: 48px;
   height: 36px;
   font-size: 1rem;
-  color: steelblue;
+  color: white;
   cursor: pointer;
 }
 
@@ -123,7 +127,7 @@ ul li::before{
   justify-content: flex-start;
   margin: .5rem 0 0;
   padding: 0 .5rem .25rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--white);
 }
 .addForm label{
   position: absolute;
