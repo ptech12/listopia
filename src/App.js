@@ -192,7 +192,7 @@ function App() {
       />
       <main>
         { loading && <p style={loadingStyle}>Loading <SyncLoader cssOverride={{marginLeft:'5px', paddingTop:'10px'}} size={'20px'} color='#eee' /> </p>}
-        {fetchError && <p style={{color: 'red'}}>{`Error: ${fetchError}`}</p>}
+        {fetchError && <p style={{color: 'red', backgroundColor:'#fff'}}>{`Error: ${fetchError}`}</p>}
         { !fetchError && !loading &&
           <Content
           items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
