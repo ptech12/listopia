@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://github.com/ptech12/listopia/compare/v0.5.3...v0.6.0) (2024-02-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* **app:** using the backend to server db.json data that sends data using nodejs as backend
+
+### Features
+
+* **app:** add server-side folder ([9769ea9](https://github.com/ptech12/listopia/commit/9769ea9f9f42fa24c7a52bd92ba700580448c974))
+* **app:** move to client folder ([f903c59](https://github.com/ptech12/listopia/commit/f903c5903b4d094e32be2cf955bce18175d01912))
+
+
+### Bug Fixes
+
+* **app:** remove parent files ([e41b4cf](https://github.com/ptech12/listopia/commit/e41b4cf34ea0e1f51a4df60ebc43e9abc5745f3f))
+* **style:** Error Display style changes ([3aacae5](https://github.com/ptech12/listopia/commit/3aacae565c88d48ef33588c1a8737e03028340b4))
+
 ### [0.5.3](https://github.com/ptech12/listopia/compare/v0.5.2...v0.5.3) (2024-01-31)
 
 
